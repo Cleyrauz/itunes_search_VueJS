@@ -4,28 +4,29 @@
       <br/>
 
       <form @submit.prevent="submit">
-          <input placeholder="Enter artist name"
-          v-model="search" autofocus  />
+        <input placeholder="Enter Artist Name"
+        v-model="search" autofocus  />
+
       </form>
+
   </div>
 </template>
 
 <script>
-
 export default {
   components: {
   },
-    data() {
-      return {
-        search: ''
-      }
-    },
-    methods: {
+  data() {
+    return {
+      search: ''
+    }
+  },
+  methods: {
       submit(event) {
         this.$router.push(`results/${this.search}`);
       }
-    }
   }
+}
 </script>
 
 <style>
@@ -35,4 +36,3 @@ export default {
 h1 {
   padding: 20px;
 }
-</style>
