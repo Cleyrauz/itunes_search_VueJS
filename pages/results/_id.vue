@@ -8,7 +8,7 @@
           :image="album.artworkUrl100"
           :artistName="album.artistName"
           :url="album.artistViewUrl"
-          :color="blue"
+          :color="picker(index)"
         />
 
       </div>
@@ -34,6 +34,11 @@ export default {
     Card
   },
   middleware: 'search',
+  methods: {
+    picker(index) {
+      return index % 2 == 0 ? 'red' : 'blue';
+    }
+  },
   computed: {
     albumExists() {
       return this.albumData.length > 0;
